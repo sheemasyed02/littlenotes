@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
+import { UseTypewriterOptions } from '../types';
 
-export const useTypewriter = (text, speed = 120, startDelay = 700) => {
+export const useTypewriter = (text: string, options: UseTypewriterOptions = {}) => {
+  const { speed = 120, delay = 700 } = options;
   const [displayText, setDisplayText] = useState('');
   const [isComplete, setIsComplete] = useState(false);
 
@@ -21,10 +23,10 @@ export const useTypewriter = (text, speed = 120, startDelay = 700) => {
       }, speed);
 
       return () => clearInterval(typeInterval);
-    }, startDelay);
+    }, delay);
 
     return () => clearTimeout(timer);
-  }, [text, speed, startDelay]);
+  }, [text, speed, delay]);
 
   return { displayText, isComplete };
 };
