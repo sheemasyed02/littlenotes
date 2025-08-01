@@ -10,7 +10,16 @@ export const useTheme = () => {
   return context;
 };
 
-export const ThemeProvider = ({ children }) => {
+import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { ThemeContextType } from '../types';
+
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+
+interface ThemeProviderProps {
+  children: ReactNode;
+}
+
+export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [isDark, setIsDark] = useState(() => {
     // Check localStorage first, then system preference
     const saved = localStorage.getItem('theme');

@@ -1,4 +1,6 @@
-export const letters = [
+import { Letter } from '../types';
+
+export const letters: Letter[] = [
   {
     id: 'emotional-heaviness',
     title: 'In moments of emotional heaviness',
