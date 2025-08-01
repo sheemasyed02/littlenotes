@@ -5,9 +5,10 @@ import { letters, getLetterById } from './data/letters';
 import LetterCard from './components/LetterCard';
 import LetterModal from './components/LetterModal';
 import ThemeToggle from './components/ThemeToggle';
+import { Letter } from './types';
 
 function App() {
-  const [selectedLetter, setSelectedLetter] = useState(null);
+  const [selectedLetter, setSelectedLetter] = useState<Letter | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Handle URL parameters for deep linking
@@ -23,14 +24,14 @@ function App() {
     }
   }, []);
 
-  const handleLetterClick = (letter) => {
+  const handleLetterClick = (letter: Letter) => {
     setSelectedLetter(letter);
     setIsModalOpen(true);
     
     // Update URL for deep linking
-    const newUrl = new URL(window.location);
+    const newUrl = new URL(window.location.href);
     newUrl.searchParams.set('letter', letter.id);
-    window.history.pushState({}, '', newUrl);
+    window.history.pushState({}, '', newUrl.toString());
   };
 
   const handleCloseModal = () => {
@@ -38,9 +39,9 @@ function App() {
     setSelectedLetter(null);
     
     // Clear URL parameter
-    const newUrl = new URL(window.location);
+    const newUrl = new URL(window.location.href);
     newUrl.searchParams.delete('letter');
-    window.history.pushState({}, '', newUrl);
+    window.history.pushState({}, '', newUrl.toString());
   };
 
   return (
@@ -137,8 +138,7 @@ function App() {
                 <LetterCard
                   key={letter.id}
                   letter={letter}
-                  onClick={handleLetterClick}
-                  index={index}
+                  onClick={() => handleLetterClick(letter)}
                 />
               ))}
             </div>

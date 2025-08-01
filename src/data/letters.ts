@@ -129,10 +129,10 @@ Your future self is cheering you on from everything you're about to become.`,
   }
 ];
 
-export const getLetterById = (id) => {
+export const getLetterById = (id: string): Letter | undefined => {
   return letters.find(letter => letter.id === id);
 };
 
-export const getLettersByCategory = (category) => {
+export const getLettersByCategory = (category: string): Letter[] => {
   return letters.filter(letter => letter.category === category);
 };

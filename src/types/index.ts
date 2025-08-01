@@ -2,7 +2,7 @@ export interface Letter {
   id: string;
   title: string;
   category: string;
-  description: string;
+  description?: string;
   content: {
     message: string;
     quote: string;
@@ -28,5 +28,6 @@ export interface LetterCardProps {
 
 export interface LetterModalProps {
   letter: Letter | null;
+  isOpen: boolean;
   onClose: () => void;
 }

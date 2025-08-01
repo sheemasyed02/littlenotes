@@ -1,27 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTypewriter } from '../hooks/useTypewriter';
+import { LetterModalProps } from '../types';
 
-const LetterModal = ({ letter, isOpen, onClose }) => {
-  const [currentSection, setCurrentSection] = useState('message');
+const LetterModal: React.FC<LetterModalProps> = ({ letter, isOpen, onClose }) => {
+  const [currentSection, setCurrentSection] = useState<'message' | 'quote' | 'reflection'>('message');
   const [hasStartedReading, setHasStartedReading] = useState(false);
   
   const { displayText: messageText, isComplete: messageComplete } = useTypewriter(
     hasStartedReading ? letter?.content?.message || '' : '',
-    45,
-    1000
+    { speed: 45, delay: 1000 }
   );
   
   const { displayText: quoteText, isComplete: quoteComplete } = useTypewriter(
     currentSection === 'quote' ? letter?.content?.quote || '' : '',
-    55,
-    500
+    { speed: 55, delay: 500 }
   );
   
   const { displayText: reflectionText } = useTypewriter(
     currentSection === 'reflection' ? letter?.content?.reflection || '' : '',
-    45,
-    500
+    { speed: 45, delay: 500 }
   );
 
   useEffect(() => {
@@ -33,7 +31,7 @@ const LetterModal = ({ letter, isOpen, onClose }) => {
     }
   }, [isOpen, letter]);
 
-  const handleSectionChange = (section) => {
+  const handleSectionChange = (section: 'message' | 'quote' | 'reflection') => {
     setCurrentSection(section);
   };
 
@@ -104,7 +102,7 @@ const LetterModal = ({ letter, isOpen, onClose }) => {
                   
                   {/* Section Navigation */}
                   <div className="flex space-x-3 bg-white/25 rounded-2xl p-3 backdrop-blur-md border border-white/20">
-                    {['message', 'quote', 'reflection'].map((section) => (
+                    {(['message', 'quote', 'reflection'] as const).map((section) => (
                       <button
                         key={section}
                         onClick={() => handleSectionChange(section)}
