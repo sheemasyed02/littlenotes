@@ -40,7 +40,7 @@ A professional, elegant, and emotionally expressive web application that brings 
 
 1. **Clone and install dependencies**:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/sheemasyed02/littlenotes
    cd open-when-letters
    npm install
    ```
