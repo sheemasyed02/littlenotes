@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Great+Vibes&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-primary antialiased;
+    margin: 0;
+    min-height: 100vh;
+    background: radial-gradient(ellipse at top, #fef8f1 0%, #f9eedc 25%, #f2dab9 50%, #e8c18a 100%);
+    background-attachment: fixed;
+    color: #3d1f10;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    font-style: italic;
+  }
+  
+  .dark body {
+    background: radial-gradient(ellipse at top, #2d1b0e 0%, #3d1f10 25%, #371e10 50%, #2d1b0e 100%);
+    background-attachment: fixed;
+    color: #f2dab9;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: 0.025em;
+    font-weight: 600;
+    font-style: italic;
+  }
+  
+  .font-vintage {
+    letter-spacing: 0.04em;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .font-heading {
+    letter-spacing: 0.02em;
+    font-style: italic;
+  }
+  
+  .font-serif {
+    letter-spacing: 0.015em;
+    font-style: italic;
+  }
+  
+  p, span, div {
+    line-height: 1.7;
+    font-style: italic;
+  }
+  
+  button, .btn-primary, .btn-secondary {
+    font-style: italic;
+    font-weight: 600;
+  }
+}
+
+@layer components {
+  .card {
+    @apply backdrop-blur-xl border rounded-3xl shadow-manuscript hover:shadow-vintage transition-all duration-700;
+    background: linear-gradient(145deg, rgba(254, 252, 247, 0.95), rgba(252, 248, 235, 0.9));
+    border: 2px solid rgba(234, 212, 130, 0.4);
+    transform: translateY(0px) rotateX(0deg);
+    transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(234, 212, 130, 0.2), transparent);
+    transition: left 0.6s ease;
+  }
+  
+  .card:hover::before {
+    left: 100%;
+  }
+  
+  .card:hover {
+    transform: translateY(-12px) rotateX(2deg);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15), 0 15px 30px rgba(212, 137, 56, 0.2);
+    border-color: rgba(212, 137, 56, 0.6);
+  }
+  
+  .dark .card {
+    background: linear-gradient(145deg, rgba(45, 27, 14, 0.95), rgba(61, 31, 16, 0.9));
+    border-color: rgba(132, 96, 56, 0.4);
+  }
+  
+  .dark .card:hover {
+    border-color: rgba(132, 96, 56, 0.8);
+  }
+  
+  .vintage-card {
+    position: relative;
+    background: radial-gradient(circle at 25% 25%, #fefcf7 0%, #fcf8eb 25%, #f8f0d1 50%, #f2e4ad 100%);
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.08),
+      0 4px 16px rgba(212, 137, 56, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+  
+  .vintage-card::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    padding: 3px;
+    background: linear-gradient(135deg, #d68938, #e8c18a, #f2dab9, #d68938);
+    border-radius: inherit;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+  }
+  
+  .btn-primary {
+    @apply px-8 py-4 font-semibold rounded-2xl transition-all duration-500 shadow-vintage hover:shadow-vintage-glow transform hover:scale-105;
+    background: linear-gradient(135deg, #d68938 0%, #c8732d 50%, #a85d28 100%);
+    color: #fefcf7;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+  }
+  
+  .btn-primary:hover::before {
+    left: 100%;
+  }
+  
+  .btn-secondary {
+    @apply px-8 py-4 font-semibold rounded-2xl border-2 transition-all duration-500 shadow-parchment hover:shadow-vintage;
+    background: linear-gradient(145deg, #fefcf7, #fcf8eb);
+    color: #422f15;
+    border-color: rgba(212, 137, 56, 0.3);
+  }
+  
+  .btn-secondary:hover {
+    background: linear-gradient(145deg, #fcf8eb, #f8f0d1);
+    border-color: rgba(212, 137, 56, 0.6);
+    transform: translateY(-2px);
+  }
+  
+  .dark .btn-secondary {
+    background: linear-gradient(145deg, #3d1f10, #2d1b0e);
+    color: #f2dab9;
+    border-color: rgba(132, 96, 56, 0.4);
+  }
+  
+  .typewriter {
+    @apply overflow-hidden whitespace-nowrap border-r-2;
+    border-color: #d68938;
+    animation: typewriter 3s steps(50) 1s 1 normal both, blink-caret 1s step-end infinite;
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #d68938; }
+  }
+  
+  .manuscript-texture {
+    background-image: 
+      radial-gradient(circle at 20% 80%, rgba(234, 212, 130, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(212, 137, 56, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(232, 193, 138, 0.05) 0%, transparent 50%);
+  }
+  
+  .ornamental-border {
+    position: relative;
+    padding: 2rem;
+  }
+  
+  .ornamental-border::before,
+  .ornamental-border::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #d68938;
+  }
+  
+  .ornamental-border::before {
+    top: 10px;
+    left: 10px;
+    border-right: none;
+    border-bottom: none;
+  }
+  
+  .ornamental-border::after {
+    bottom: 10px;
+    right: 10px;
+    border-left: none;
+    border-top: none;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-vintage-700 via-sepia-600 to-bronze-700 bg-clip-text text-transparent;
+    background-size: 200% 200%;
+    animation: vintage-shimmer 5s ease-in-out infinite;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  
+  .text-gradient-alt {
+    @apply bg-gradient-to-r from-bronze-700 via-vintage-600 to-sepia-600 bg-clip-text text-transparent;
+    font-weight: 600;
+    letter-spacing: 0.015em;
+  }
+  
+  .vintage-gradient {
+    background: linear-gradient(135deg, #d68938 0%, #c8732d 25%, #e8c18a 50%, #f2dab9 75%, #dea05a 100%);
+  }
+  
+  .glass {
+    @apply backdrop-blur-md border;
+    background: linear-gradient(145deg, rgba(254, 252, 247, 0.3), rgba(252, 248, 235, 0.2));
+    border-color: rgba(234, 212, 130, 0.3);
+  }
+  
+  .dark .glass {
+    background: linear-gradient(145deg, rgba(45, 27, 14, 0.3), rgba(61, 31, 16, 0.2));
+    border-color: rgba(132, 96, 56, 0.3);
+  }
+  
+  .floating-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(2px);
+    animation: vintage-float 8s ease-in-out infinite;
+    background: radial-gradient(circle, rgba(234, 212, 130, 0.4), rgba(212, 137, 56, 0.2), transparent);
+  }
+  
+  .magical-border {
+    position: relative;
+    background: radial-gradient(circle at 25% 25%, #fefcf7 0%, #fcf8eb 25%, #f8f0d1 50%, #f2e4ad 100%);
+    border-radius: 24px;
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.08),
+      0 4px 16px rgba(212, 137, 56, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+  
+  .magical-border::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    padding: 3px;
+    background: linear-gradient(45deg, #d68938, #e8c18a, #f2dab9, #dea05a, #d68938);
+    border-radius: inherit;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+    animation: vintage-border-glow 4s linear infinite;
+    background-size: 400% 400%;
+  }
+  
+  .vintage-paper-texture {
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(234, 212, 130, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(212, 137, 56, 0.08) 0%, transparent 50%),
+      linear-gradient(135deg, transparent 25%, rgba(232, 193, 138, 0.05) 25%, rgba(232, 193, 138, 0.05) 50%, transparent 50%);
+    background-size: 60px 60px, 80px 80px, 40px 40px;
+  }
+  
+  .ornate-corners::before,
+  .ornate-corners::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(212, 137, 56, 0.6);
+  }
+  
+  .ornate-corners::before {
+    top: 12px;
+    left: 12px;
+    border-right: none;
+    border-bottom: none;
+    border-top-left-radius: 8px;
+  }
+  
+  .ornate-corners::after {
+    bottom: 12px;
+    right: 12px;
+    border-left: none;
+    border-top: none;
+    border-bottom-right-radius: 8px;
+  }
+  
+  @keyframes vintage-float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-15px) rotate(5deg); }
+    66% { transform: translateY(-8px) rotate(-3deg); }
+  }
+  
+  @keyframes vintage-shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  @keyframes vintage-border-glow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+}
+
+.card {
+  @apply bg-white/80 backdrop-blur-lg border border-gray-200/50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300;
+}
+
+.dark .card {
+  @apply bg-gray-800/80 border-gray-700/50;
+}
+
+.btn-primary {
+  @apply px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-[1.02];
+}
+
+.btn-secondary {
+  @apply px-6 py-3 bg-white/90 text-gray-700 font-medium rounded-xl border border-gray-200 hover:bg-gray-50 transition-all duration-200 shadow-md hover:shadow-lg;
+}
+
+.dark .btn-secondary {
+  @apply bg-gray-800/90 text-gray-300 border-gray-700 hover:bg-gray-700;
+}
+
+.text-gradient {
+  @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
+}
+
+.glass {
+  @apply bg-white/10 backdrop-blur-md border border-white/20;
+}
+
+.dark .glass {
+  @apply bg-gray-900/10 border-gray-700/20;
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #3b82f6; }
+}
