@@ -6,6 +6,7 @@ import LetterCard from './components/LetterCard';
 import LetterModal from './components/LetterModal';
 import ThemeToggle from './components/ThemeToggle';
 import { Letter } from './types';
+import './App.css';
 
 function App() {
   const [selectedLetter, setSelectedLetter] = useState<Letter | null>(null);
@@ -13,128 +14,112 @@ function App() {
 
   // Handle URL parameters for deep linking
   useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const letterId = urlParams.get('letter');
-    if (letterId) {
-      const letter = getLetterById(letterId);
-      if (letter) {
-        setSelectedLetter(letter);
-        setIsModalOpen(true);
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const letterId = urlParams.get('letter');
+      if (letterId) {
+        const letter = getLetterById(letterId);
+        if (letter) {
+          setSelectedLetter(letter);
+          setIsModalOpen(true);
+        }
       }
+    } catch (error) {
+      console.error('Error handling URL parameters:', error);
     }
   }, []);
 
   const handleLetterClick = (letter: Letter) => {
-    setSelectedLetter(letter);
-    setIsModalOpen(true);
-    
-    // Update URL for deep linking
-    const newUrl = new URL(window.location.href);
-    newUrl.searchParams.set('letter', letter.id);
-    window.history.pushState({}, '', newUrl.toString());
+    try {
+      setSelectedLetter(letter);
+      setIsModalOpen(true);
+      
+      // Update URL for deep linking
+      const newUrl = new URL(window.location.href);
+      newUrl.searchParams.set('letter', letter.id);
+      window.history.pushState({}, '', newUrl.toString());
+    } catch (error) {
+      console.error('Error handling letter click:', error);
+      // Fallback: just open the modal without URL update
+      setSelectedLetter(letter);
+      setIsModalOpen(true);
+    }
   };
 
   const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setSelectedLetter(null);
-    
-    // Clear URL parameter
-    const newUrl = new URL(window.location.href);
-    newUrl.searchParams.delete('letter');
-    window.history.pushState({}, '', newUrl.toString());
+    try {
+      setIsModalOpen(false);
+      setSelectedLetter(null);
+      
+      // Clear URL parameter
+      const newUrl = new URL(window.location.href);
+      newUrl.searchParams.delete('letter');
+      window.history.pushState({}, '', newUrl.toString());
+    } catch (error) {
+      console.error('Error handling modal close:', error);
+      // Fallback: just close the modal
+      setIsModalOpen(false);
+      setSelectedLetter(null);
+    }
   };
 
   return (
     <ThemeProvider>
-      <div className="min-h-screen transition-colors duration-300">
-        <ThemeToggle />
-        
-        {/* Background Elements */}
-        <div className="fixed inset-0 overflow-hidden pointer-events-none">
-          {/* Vintage floating elements */}
-          <div className="floating-orb w-32 h-32 top-20 left-10" style={{animationDelay: '0s'}}></div>
-          <div className="floating-orb w-48 h-48 bottom-20 right-10" style={{animationDelay: '3s'}}></div>
-          <div className="floating-orb w-24 h-24 top-1/2 left-1/3" style={{animationDelay: '6s'}}></div>
-          <div className="floating-orb w-40 h-40 top-1/3 right-1/4" style={{animationDelay: '1.5s'}}></div>
-          
-          {/* Vintage sparkle effects */}
-          <div className="absolute top-10 left-20 w-2 h-2 bg-vintage-500 rounded-full animate-ping opacity-60" style={{animationDelay: '0.5s'}}></div>
-          <div className="absolute top-32 right-32 w-1 h-1 bg-bronze-600 rounded-full animate-ping opacity-70" style={{animationDelay: '2s'}}></div>
-          <div className="absolute bottom-40 left-40 w-3 h-3 bg-sepia-500 rounded-full animate-ping opacity-50" style={{animationDelay: '4s'}}></div>
-          <div className="absolute bottom-20 right-60 w-1.5 h-1.5 bg-vintage-600 rounded-full animate-ping opacity-80" style={{animationDelay: '6s'}}></div>
-          
-          {/* Paper texture overlay */}
-          <div className="absolute inset-0 vintage-paper-texture opacity-30"></div>
+      <div className="min-h-screen relative overflow-hidden bg-gradient-vintage dark:bg-gradient-to-br dark:from-vintage-950 dark:to-sepia-950 transition-all duration-500">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-10 left-10 w-32 h-32 bg-vintage-300/20 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute top-32 right-20 w-24 h-24 bg-sepia-400/15 rounded-full blur-2xl animate-float" style={{animationDelay: '2s'}}></div>
+          <div className="absolute bottom-20 left-32 w-40 h-40 bg-bronze-300/10 rounded-full blur-3xl animate-float" style={{animationDelay: '4s'}}></div>
+          <div className="absolute bottom-32 right-10 w-28 h-28 bg-parchment-400/20 rounded-full blur-2xl animate-float" style={{animationDelay: '1s'}}></div>
         </div>
 
-        {/* Main Content */}
+        {/* Theme Toggle */}
+        <ThemeToggle />
+
         <div className="relative z-10">
           {/* Header */}
-          <motion.header
-            initial={{ opacity: 0, y: -20 }}
+          <motion.header 
+            initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center py-20 px-4"
+            transition={{ duration: 1, delay: 0.2 }}
+            className="text-center py-20 px-4 relative"
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="mb-8"
+            <div className="absolute top-10 left-1/2 transform -translate-x-1/2 w-64 h-1 bg-gradient-to-r from-vintage-600 via-bronze-500 to-sepia-600 rounded-full opacity-60"></div>
+            
+            <motion.div 
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="relative mb-8"
             >
-              <div className="inline-block relative">
-                <div className="text-8xl md:text-9xl filter drop-shadow-lg">
-                  <span className="inline-block transform hover:scale-110 transition-transform duration-300">📜</span>
-                </div>
-                <div className="absolute -top-2 -right-2 w-6 h-6 bg-vintage-400 rounded-full opacity-60 animate-pulse"></div>
-              </div>
+              <h1 className="text-7xl md:text-8xl font-heading font-bold text-vintage-900 dark:text-parchment-50 mb-6 tracking-wider relative italic">
+                Open When Letters
+                <div className="absolute -inset-2 bg-gradient-to-r from-vintage-400/20 to-bronze-400/20 blur-2xl rounded-3xl"></div>
+              </h1>
             </motion.div>
             
-            <motion.h1
-              className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold text-gradient mb-8 tracking-wide italic"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              Open When Letters
-            </motion.h1>
-            
-            <motion.div
+            <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="relative"
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="text-2xl md:text-3xl text-vintage-700 dark:text-parchment-300 max-w-3xl mx-auto leading-relaxed font-heading italic tracking-wide"
             >
-              <p className="text-2xl md:text-3xl text-vintage-900 dark:text-parchment-100 font-heading max-w-4xl mx-auto leading-relaxed mb-4 italic font-medium tracking-wide">
-                Open a letter when you need it most.
-              </p>
-              <p className="text-lg md:text-xl text-vintage-800/90 dark:text-parchment-200/90 max-w-3xl mx-auto font-heading leading-relaxed italic">
-                ✨ Find comfort, strength, and hope in words written just for you ✨
-              </p>
-            </motion.div>
+              Open a letter when you need it most.
+            </motion.p>
             
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="mt-8"
-            >
-              <div className="inline-flex items-center gap-3 px-8 py-4 glass rounded-full border border-vintage-300/30 dark:border-sepia-600/30 ornamental-border">
-                <span className="text-vintage-800 dark:text-parchment-200 text-sm font-medium tracking-wide font-heading italic">Choose your moment</span>
-                <span className="text-vintage-700 text-xl animate-bounce">↓</span>
-              </div>
-            </motion.div>
+            <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-64 h-1 bg-gradient-to-r from-sepia-600 via-bronze-500 to-vintage-600 rounded-full opacity-60"></div>
           </motion.header>
 
           {/* Letters Grid */}
-          <motion.main
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="container mx-auto px-4 pb-16"
+          <motion.main 
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1 }}
+            className="px-4 pb-20"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-              {letters.map((letter, index) => (
+              {letters.map((letter) => (
                 <LetterCard
                   key={letter.id}
                   letter={letter}
@@ -145,19 +130,15 @@ function App() {
           </motion.main>
 
           {/* Footer */}
-          <motion.footer
+          <motion.footer 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            className="text-center py-12 px-4"
+            transition={{ duration: 0.8, delay: 1.5 }}
+            className="text-center py-12 px-4 border-t border-vintage-300/50 dark:border-sepia-700/50 bg-vintage-50/50 dark:bg-vintage-900/30 backdrop-blur-sm"
           >
-            <div className="max-w-md mx-auto">
-              <div className="vintage-card rounded-2xl p-8 vintage-paper-texture">
-                <p className="text-vintage-800 dark:text-parchment-200 font-heading text-sm leading-relaxed text-center font-medium tracking-wide italic">
-                  <span className="text-xl">🕊️</span> Crafted with love for moments when words matter most <span className="text-xl">🤍</span>
-                </p>
-              </div>
-            </div>
+            <p className="text-vintage-700 dark:text-parchment-400 font-heading italic tracking-wider">
+              Made with 💝 for moments when words matter most
+            </p>
           </motion.footer>
         </div>
 
