@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Open When Letters
 
 A professional, elegant, and emotionally expressive web application that brings the concept of physical "Open When" envelopes into the digital world. This application provides comfort, strength, and hope through thoughtfully written letters for different emotional moments.
