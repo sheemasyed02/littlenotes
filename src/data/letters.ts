@@ -5,7 +5,7 @@ export const letters: Letter[] = [
     id: 'emotional-heaviness',
     title: 'In moments of emotional heaviness',
     category: 'comfort',
-    gradient: 'from-dusty-400 to-smoke-600',
+    gradient: 'from-tobacco-400 to-leather-600',
     content: {
       message: `Dear gentle soul,
 
@@ -24,7 +24,7 @@ Tomorrow will feel different. Not necessarily easier, but different. And that di
     id: 'distance-difficulty',
     title: 'When distance feels difficult',
     category: 'connection',
-    gradient: 'from-aged-400 to-misty-600',
+    gradient: 'from-sepia-400 to-bronze-600',
     content: {
       message: `Beloved friend,
 
@@ -43,7 +43,7 @@ Until you meet again, carry them with you in the most permanent way possible: in
     id: 'questioning-strength',
     title: 'When you\'re questioning your strength',
     category: 'empowerment',
-    gradient: 'from-smoke-400 to-dusty-600',
+    gradient: 'from-copper-400 to-mahogany-600',
     content: {
       message: `Warrior of quiet battles,
 
@@ -62,7 +62,7 @@ You are stronger than you know, braver than you believe, and more resilient than
     id: 'self-doubt',
     title: 'When self-doubt creeps in',
     category: 'confidence',
-    gradient: 'from-misty-400 to-aged-600',
+    gradient: 'from-bronze-400 to-leather-600',
     content: {
       message: `Dear doubting mind,
 
@@ -85,7 +85,7 @@ You belong here. You are enough. You always have been.`,
     id: 'personal-pride',
     title: 'In a moment of personal pride',
     category: 'celebration',
-    gradient: 'from-aged-500 to-smoke-700',
+    gradient: 'from-mahogany-500 to-copper-700',
     content: {
       message: `Magnificent human,
 
@@ -108,7 +108,7 @@ Let this pride fuel your next adventure, remind you of your capabilities, and se
     id: 'new-beginnings',
     title: 'When starting something new',
     category: 'growth',
-    gradient: 'from-dusty-600 to-aged-700',
+    gradient: 'from-sepia-600 to-tobacco-700',
     content: {
       message: `Brave adventurer,
 
