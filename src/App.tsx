@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { letters } from './data/letters';
-import LetterCard from './components/LetterCard-noframer';
-import LetterModal from './components/LetterModal-noframer';
+import LetterCard from './components/LetterCard';
+import LetterModal from './components/LetterModal';
 import ThemeToggle from './components/ThemeToggle';
 import { Letter } from './types';
 
