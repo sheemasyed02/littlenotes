@@ -30,12 +30,10 @@ function App() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-parchment-100/30 to-parchment-300/40 dark:from-transparent dark:via-vintage-dark-surface/30 dark:to-vintage-dark-accent/40"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-parchment-200/10 to-vintage-sepia/20 dark:from-transparent dark:via-vintage-dark-gold/15 dark:to-vintage-dark-surface/25"></div>
         
-        {/* Floating vintage particles like paper dust */}
+        {/* Subtle floating vintage particles */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-16 w-20 h-20 bg-parchment-200/15 dark:bg-vintage-dark-gold/30 rounded-full blur-xl animate-float"></div>
-          <div className="absolute top-40 right-24 w-28 h-28 bg-vintage-sepia/12 dark:bg-vintage-dark-text/25 rounded-full blur-2xl animate-float-slow" style={{animationDelay: '3s'}}></div>
-          <div className="absolute bottom-32 left-20 w-24 h-24 bg-parchment-300/10 dark:bg-vintage-dark-gold/25 rounded-full blur-xl animate-drift" style={{animationDelay: '6s'}}></div>
-          <div className="absolute bottom-16 right-32 w-32 h-32 bg-vintage-sepia/8 dark:bg-vintage-dark-text/20 rounded-full blur-2xl animate-float-slower" style={{animationDelay: '1.5s'}}></div>
+          <div className="absolute top-20 left-16 w-16 h-16 bg-parchment-200/10 dark:bg-vintage-dark-gold/20 rounded-full blur-xl animate-float-slow"></div>
+          <div className="absolute bottom-32 right-20 w-20 h-20 bg-vintage-sepia/8 dark:bg-vintage-dark-text/15 rounded-full blur-2xl animate-drift" style={{animationDelay: '4s'}}></div>
         </div>
 
         <ThemeToggle />

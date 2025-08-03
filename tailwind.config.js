@@ -52,10 +52,10 @@ export default {
         'vintage-paper': "url('data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"40\" height=\"40\" viewBox=\"0 0 40 40\"%3E%3Cg fill=\"%23f4e4bc\" fill-opacity=\"0.05\"%3E%3Cpath d=\"M20 20c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20z\"/%3E%3C/g%3E%3C/svg%3E')",
       },
       animation: {
-        'float': 'float 6s ease-in-out infinite',
-        'float-slow': 'float 8s ease-in-out infinite',
-        'float-slower': 'float 12s ease-in-out infinite',
-        'drift': 'drift 10s ease-in-out infinite',
+        'float': 'float 8s ease-in-out infinite',
+        'float-slow': 'float 12s ease-in-out infinite',
+        'float-slower': 'float 16s ease-in-out infinite',
+        'drift': 'drift 15s ease-in-out infinite',
         'typewriter': 'typewriter 2s steps(20) 1s both',
         'fade-in': 'fadeIn 2s ease-in forwards',
         'slide-up': 'slideUp 0.8s ease-out forwards',
@@ -63,13 +63,13 @@ export default {
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
-          '50%': { transform: 'translateY(-20px) rotate(5deg)' },
+          '50%': { transform: 'translateY(-8px) rotate(1deg)' },
         },
         drift: {
           '0%, 100%': { transform: 'translateX(0px) translateY(0px)' },
-          '25%': { transform: 'translateX(10px) translateY(-15px)' },
-          '50%': { transform: 'translateX(-5px) translateY(-10px)' },
-          '75%': { transform: 'translateX(-10px) translateY(-20px)' },
+          '25%': { transform: 'translateX(5px) translateY(-5px)' },
+          '50%': { transform: 'translateX(-3px) translateY(-8px)' },
+          '75%': { transform: 'translateX(-5px) translateY(-3px)' },
         },
         typewriter: {
           '0%': { width: '0%' },

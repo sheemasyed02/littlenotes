@@ -86,9 +86,9 @@
   }
   
   .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(212, 183, 150, 0.2);
-    border-color: rgba(212, 183, 150, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12), 0 3px 8px rgba(212, 183, 150, 0.25);
+    border-color: rgba(212, 183, 150, 0.7);
   }
   
   .dark .card {
@@ -105,12 +105,12 @@
   .dark .card:hover {
     border-color: rgba(218, 184, 105, 0.8);
     box-shadow: 
-      0 20px 40px rgba(0, 0, 0, 0.7),
-      0 12px 24px rgba(218, 184, 105, 0.3),
-      0 4px 8px rgba(245, 239, 229, 0.2),
-      inset 0 1px 0 rgba(245, 239, 229, 0.15),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.3);
-    transform: translateY(-10px);
+      0 8px 20px rgba(0, 0, 0, 0.4),
+      0 4px 12px rgba(218, 184, 105, 0.2),
+      0 2px 6px rgba(245, 239, 229, 0.15),
+      inset 0 1px 0 rgba(245, 239, 229, 0.12),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
   }
   
   .vintage-card {
@@ -305,10 +305,12 @@
   
   .vintage-paper-texture {
     background-image: 
-      radial-gradient(circle at 25% 25%, rgba(212, 183, 150, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 75% 75%, rgba(139, 111, 71, 0.08) 0%, transparent 50%),
-      linear-gradient(135deg, transparent 25%, rgba(242, 228, 173, 0.05) 25%, rgba(242, 228, 173, 0.05) 50%, transparent 50%);
-    background-size: 60px 60px, 80px 80px, 40px 40px;
+      radial-gradient(circle at 25% 25%, rgba(212, 183, 150, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(139, 111, 71, 0.06) 0%, transparent 50%),
+      radial-gradient(circle at 40% 60%, rgba(242, 228, 173, 0.04) 0%, transparent 50%),
+      linear-gradient(135deg, transparent 25%, rgba(212, 183, 150, 0.02) 25%, rgba(212, 183, 150, 0.02) 50%, transparent 50%);
+    background-size: 120px 120px, 180px 180px, 90px 90px, 60px 60px;
+    background-position: 0 0, 40px 60px, 80px 20px, 20px 40px;
   }
   
   .ornate-corners::before,
@@ -368,6 +370,43 @@
     0 4px 20px rgba(0, 0, 0, 0.1),
     0 2px 10px rgba(212, 183, 150, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* Custom scrollbar styles */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: rgba(254, 247, 214, 0.5);
+  border-radius: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(139, 111, 71, 0.6);
+  border-radius: 4px;
+  border: 1px solid rgba(254, 247, 214, 0.3);
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 111, 71, 0.8);
+}
+
+.dark .scrollbar-thin::-webkit-scrollbar-track {
+  background: rgba(45, 27, 14, 0.6);
+}
+
+.dark .scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(218, 184, 105, 0.7);
+  border: 1px solid rgba(45, 27, 14, 0.5);
+}
+
+.dark .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(218, 184, 105, 0.9);
 }
 
 .dark .vintage-shadow {

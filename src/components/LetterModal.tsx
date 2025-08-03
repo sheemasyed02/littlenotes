@@ -18,7 +18,7 @@ const LetterModal: React.FC<LetterModalProps> = ({ letter, isOpen, onClose }) =>
 
   const { displayText } = useTypewriter(
     letter ? letter.content[currentSection] : '',
-    { speed: 30, delay: hasStarted ? 200 : 500 }
+    { speed: 50, delay: hasStarted ? 100 : 300 }
   );
 
   // Handle keyboard navigation
@@ -102,10 +102,10 @@ const LetterModal: React.FC<LetterModalProps> = ({ letter, isOpen, onClose }) =>
           </div>
         </div>
 
-        {/* Content with vintage styling */}
-        <div className="px-8 py-8 overflow-y-auto max-h-[60vh] relative">
+        {/* Content with vintage styling and proper scrolling */}
+        <div className="px-8 py-8 overflow-y-auto max-h-[65vh] relative scrollbar-thin scrollbar-track-parchment-100 scrollbar-thumb-vintage-brown dark:scrollbar-track-vintage-dark-surface dark:scrollbar-thumb-vintage-dark-gold">
           <div className="prose prose-lg max-w-none">
-            <div className="text-vintage-ink dark:text-vintage-dark-text leading-relaxed font-primary text-lg whitespace-pre-line">
+            <div className="text-vintage-ink dark:text-vintage-dark-text leading-relaxed font-primary text-lg whitespace-pre-line min-h-[200px]">
               {displayText}
               <span className="inline-block w-0.5 h-6 bg-vintage-brown dark:bg-vintage-dark-gold ml-1 animate-pulse"></span>
             </div>
@@ -113,21 +113,25 @@ const LetterModal: React.FC<LetterModalProps> = ({ letter, isOpen, onClose }) =>
         </div>
 
         {/* Navigation with vintage styling */}
-        <div className="px-8 py-6 border-t border-vintage-brown/20 dark:border-vintage-gold/20 bg-gradient-to-r from-parchment-100/60 to-parchment-200/60 dark:from-vintage-brown/60 dark:to-parchment-800/60">
+        <div className="px-8 py-6 border-t border-vintage-brown/20 dark:border-vintage-dark-gold/40 bg-gradient-to-r from-parchment-100/60 to-parchment-200/60 dark:from-vintage-dark-surface/60 dark:to-vintage-dark-accent/60">
           <div className="flex items-center justify-between">
-            <div className="flex gap-2">
+            <div className="flex gap-3">
               {(['message', 'quote', 'reflection'] as const).map((section) => (
                 <button
                   key={section}
                   onClick={() => {
-                    setCurrentSection(section);
-                    setHasStarted(true);
+                    if (currentSection !== section) {
+                      setCurrentSection(section);
+                      setHasStarted(false);
+                      // Small delay to reset typewriter before starting
+                      setTimeout(() => setHasStarted(true), 100);
+                    }
                   }}
                   className={`
-                    px-4 py-2 rounded text-sm font-heading transition-all duration-200 border
+                    px-6 py-3 rounded-lg text-sm font-heading transition-all duration-200 border-2 relative overflow-hidden
                     ${currentSection === section
-                      ? 'bg-vintage-brown text-vintage-cream shadow-lg border-vintage-brown dark:bg-vintage-dark-gold dark:text-vintage-dark-bg dark:border-vintage-dark-gold'
-                      : 'bg-parchment-200/70 hover:bg-parchment-300/80 text-vintage-brown dark:bg-vintage-dark-accent/70 dark:hover:bg-vintage-dark-secondary/80 dark:text-vintage-dark-muted border-vintage-brown/20 dark:border-vintage-dark-gold/40'
+                      ? 'bg-vintage-brown text-vintage-cream shadow-md border-vintage-brown dark:bg-vintage-dark-gold dark:text-vintage-dark-bg dark:border-vintage-dark-gold transform scale-[0.98]'
+                      : 'bg-parchment-200/80 hover:bg-parchment-300/90 text-vintage-brown dark:bg-vintage-dark-accent/80 dark:hover:bg-vintage-dark-secondary/90 dark:text-vintage-dark-muted dark:hover:text-vintage-dark-text border-vintage-brown/30 dark:border-vintage-dark-gold/50 hover:border-vintage-brown/50 dark:hover:border-vintage-dark-gold/70 hover:shadow-sm'
                     }
                   `}
                 >

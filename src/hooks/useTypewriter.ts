@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { UseTypewriterOptions } from '../types';
 
 export const useTypewriter = (text: string, options: UseTypewriterOptions = {}) => {
-  const { speed = 120, delay = 700 } = options;
+  const { speed = 50, delay = 500 } = options;
   const [displayText, setDisplayText] = useState('');
   const [isComplete, setIsComplete] = useState(false);
 
