@@ -8,9 +8,12 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'script': ['Dancing Script', 'Brush Script MT', 'cursive'],
-        'serif': ['Playfair Display', 'Times New Roman', 'serif'],
-        'heading': ['Cinzel', 'serif'],
+        'primary': ['Playfair Display', 'Georgia', 'serif'],
+        'heading': ['Playfair Display', 'Georgia', 'serif'],
+        'serif': ['Playfair Display', 'Georgia', 'serif'],
+        'script': ['Great Vibes', 'Dancing Script', 'cursive'],
+        'vintage': ['Playfair Display', 'serif'],
+        'modern': ['Playfair Display', 'sans-serif'],
         'handwriting': ['Kalam', 'cursive'],
       },
       colors: {
@@ -35,6 +38,12 @@ export default {
           darkbrown: '#5d4e37',
           gold: '#d4af37',
           rust: '#b7410e',
+          // Dark mode specific colors
+          'dark-bg': '#2d1b0e',
+          'dark-surface': '#3a2f26',
+          'dark-accent': '#4a3b2a',
+          'dark-gold': '#d4af37',
+          'dark-text': '#f7f1e8',
         }
       },
       backgroundImage: {
