@@ -65,7 +65,7 @@ const LetterModal: React.FC<LetterModalProps> = ({ letter, isOpen, onClose }) =>
         relative w-full max-w-4xl max-h-[90vh] 
         bg-gradient-to-br from-parchment-50 via-vintage-cream to-parchment-100 dark:from-vintage-dark-bg dark:via-vintage-dark-surface dark:to-vintage-dark-secondary
         rounded-lg shadow-2xl border-2 border-vintage-brown/30 dark:border-vintage-dark-gold/40
-        overflow-hidden
+        overflow-hidden flex flex-col
         transform transition-all duration-300 ease-out
         ${isOpen ? 'scale-100 translate-y-0' : 'scale-95 translate-y-4'}
       `}>
@@ -85,7 +85,7 @@ const LetterModal: React.FC<LetterModalProps> = ({ letter, isOpen, onClose }) =>
         </button>
 
         {/* Header with vintage styling */}
-        <div className="relative px-8 py-8 border-b border-vintage-brown/20 dark:border-vintage-dark-gold/40">
+        <div className="relative px-8 py-8 border-b border-vintage-brown/20 dark:border-vintage-dark-gold/40 flex-shrink-0">
           <div className="absolute inset-0 bg-gradient-to-r from-parchment-100/40 to-parchment-200/40 dark:from-vintage-dark-surface/50 dark:to-vintage-dark-accent/50"></div>
           <div className="relative">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-vintage-ink dark:text-vintage-dark-text mb-2 text-center vintage-text-shadow">
@@ -103,9 +103,9 @@ const LetterModal: React.FC<LetterModalProps> = ({ letter, isOpen, onClose }) =>
         </div>
 
         {/* Content with vintage styling and proper scrolling */}
-        <div className="px-8 py-8 overflow-y-auto max-h-[65vh] relative scrollbar-thin scrollbar-track-parchment-100 scrollbar-thumb-vintage-brown dark:scrollbar-track-vintage-dark-surface dark:scrollbar-thumb-vintage-dark-gold">
+        <div className="flex-1 px-8 py-6 overflow-y-scroll scrollbar-thin relative">
           <div className="prose prose-lg max-w-none">
-            <div className="text-vintage-ink dark:text-vintage-dark-text leading-relaxed font-primary text-lg whitespace-pre-line min-h-[200px]">
+            <div className="text-vintage-ink dark:text-vintage-dark-text leading-relaxed font-primary text-lg whitespace-pre-line">
               {displayText}
               <span className="inline-block w-0.5 h-6 bg-vintage-brown dark:bg-vintage-dark-gold ml-1 animate-pulse"></span>
             </div>
@@ -113,7 +113,7 @@ const LetterModal: React.FC<LetterModalProps> = ({ letter, isOpen, onClose }) =>
         </div>
 
         {/* Navigation with vintage styling */}
-        <div className="px-8 py-6 border-t border-vintage-brown/20 dark:border-vintage-dark-gold/40 bg-gradient-to-r from-parchment-100/60 to-parchment-200/60 dark:from-vintage-dark-surface/60 dark:to-vintage-dark-accent/60">
+        <div className="px-8 py-6 border-t border-vintage-brown/20 dark:border-vintage-dark-gold/40 bg-gradient-to-r from-parchment-100/60 to-parchment-200/60 dark:from-vintage-dark-surface/60 dark:to-vintage-dark-accent/60 flex-shrink-0">
           <div className="flex items-center justify-between">
             <div className="flex gap-3">
               {(['message', 'quote', 'reflection'] as const).map((section) => (
