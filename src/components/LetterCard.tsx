@@ -8,16 +8,16 @@ const LetterCard: React.FC<LetterCardProps> = ({ letter, onClick }) => {
       onClick={() => onClick(letter)}
     >
       {/* Vintage parchment card */}
-      <div className="relative bg-gradient-to-br from-parchment-100 via-parchment-200 to-parchment-300 dark:bg-gradient-to-br dark:from-vintage-dark-surface dark:via-vintage-dark-accent dark:to-vintage-dark-bg rounded-lg p-8 shadow-lg border border-parchment-300/50 dark:border-vintage-dark-gold/30 backdrop-blur-sm overflow-hidden vintage-shadow">
+      <div className="relative bg-gradient-to-br from-parchment-100 via-parchment-200 to-parchment-300 dark:bg-gradient-to-br dark:from-vintage-dark-surface dark:via-vintage-dark-accent dark:to-vintage-dark-secondary rounded-lg p-8 shadow-lg border border-parchment-300/50 dark:border-vintage-dark-gold/40 backdrop-blur-sm overflow-hidden vintage-shadow">
         
         {/* Vintage paper texture overlay */}
-        <div className="absolute inset-0 bg-vintage-paper opacity-20 dark:opacity-10"></div>
+        <div className="absolute inset-0 bg-vintage-paper opacity-20 dark:opacity-15"></div>
         
         {/* Subtle corner decorations */}
-        <div className="absolute top-2 left-2 w-4 h-4 border-l-2 border-t-2 border-vintage-brown/40 dark:border-vintage-dark-gold/50"></div>
-        <div className="absolute top-2 right-2 w-4 h-4 border-r-2 border-t-2 border-vintage-brown/40 dark:border-vintage-dark-gold/50"></div>
-        <div className="absolute bottom-2 left-2 w-4 h-4 border-l-2 border-b-2 border-vintage-brown/40 dark:border-vintage-dark-gold/50"></div>
-        <div className="absolute bottom-2 right-2 w-4 h-4 border-r-2 border-b-2 border-vintage-brown/40 dark:border-vintage-dark-gold/50"></div>
+        <div className="absolute top-2 left-2 w-4 h-4 border-l-2 border-t-2 border-vintage-brown/40 dark:border-vintage-dark-gold/60"></div>
+        <div className="absolute top-2 right-2 w-4 h-4 border-r-2 border-t-2 border-vintage-brown/40 dark:border-vintage-dark-gold/60"></div>
+        <div className="absolute bottom-2 left-2 w-4 h-4 border-l-2 border-b-2 border-vintage-brown/40 dark:border-vintage-dark-gold/60"></div>
+        <div className="absolute bottom-2 right-2 w-4 h-4 border-r-2 border-b-2 border-vintage-brown/40 dark:border-vintage-dark-gold/60"></div>
 
         <div className="relative z-10">
           {/* Letter title with handwritten style */}
@@ -27,7 +27,7 @@ const LetterCard: React.FC<LetterCardProps> = ({ letter, onClick }) => {
           
           {/* Category with vintage styling */}
           <div className="text-center mb-6">
-            <span className="inline-block px-4 py-2 bg-parchment-200/80 dark:bg-vintage-dark-accent/40 text-vintage-brown dark:text-vintage-dark-gold text-sm font-medium uppercase tracking-widest rounded border border-vintage-brown/20 dark:border-vintage-dark-gold/30">
+            <span className="inline-block px-4 py-2 bg-parchment-200/80 dark:bg-vintage-dark-accent/50 text-vintage-brown dark:text-vintage-dark-muted text-sm font-medium uppercase tracking-widest rounded border border-vintage-brown/20 dark:border-vintage-dark-gold/40">
               {letter.category}
             </span>
           </div>
