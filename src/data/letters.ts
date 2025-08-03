@@ -5,7 +5,7 @@ export const letters: Letter[] = [
     id: 'emotional-heaviness',
     title: 'In moments of emotional heaviness',
     category: 'comfort',
-    gradient: 'from-vintage-400 to-sepia-600',
+    gradient: 'from-amber-600 to-orange-700',
     content: {
       message: `Dear gentle soul,
 
@@ -24,7 +24,7 @@ Tomorrow will feel different. Not necessarily easier, but different. And that di
     id: 'distance-difficulty',
     title: 'When distance feels difficult',
     category: 'connection',
-    gradient: 'from-parchment-400 to-tobacco-600',
+    gradient: 'from-orange-500 to-red-600',
     content: {
       message: `Beloved friend,
 
@@ -43,7 +43,7 @@ Until you meet again, carry them with you in the most permanent way possible: in
     id: 'questioning-strength',
     title: 'When you\'re questioning your strength',
     category: 'empowerment',
-    gradient: 'from-leather-400 to-vintage-700',
+    gradient: 'from-yellow-600 to-amber-700',
     content: {
       message: `Warrior of quiet battles,
 
@@ -62,7 +62,7 @@ You are stronger than you know, braver than you believe, and more resilient than
     id: 'self-doubt',
     title: 'When self-doubt creeps in',
     category: 'confidence',
-    gradient: 'from-sepia-500 to-parchment-700',
+    gradient: 'from-amber-500 to-orange-600',
     content: {
       message: `Dear doubting mind,
 
@@ -85,7 +85,7 @@ You belong here. You are enough. You always have been.`,
     id: 'personal-pride',
     title: 'In a moment of personal pride',
     category: 'celebration',
-    gradient: 'from-tobacco-500 to-mahogany-700',
+    gradient: 'from-orange-600 to-amber-800',
     content: {
       message: `Magnificent human,
 
@@ -108,7 +108,7 @@ Let this pride fuel your next adventure, remind you of your capabilities, and se
     id: 'new-beginnings',
     title: 'When starting something new',
     category: 'growth',
-    gradient: 'from-vintage-600 to-leather-800',
+    gradient: 'from-yellow-500 to-orange-700',
     content: {
       message: `Brave adventurer,
 

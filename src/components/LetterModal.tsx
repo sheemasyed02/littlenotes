@@ -18,7 +18,7 @@ const LetterModal: React.FC<LetterModalProps> = ({ letter, isOpen, onClose }) =>
 
   const { displayText } = useTypewriter(
     letter ? letter.content[currentSection] : '',
-    { speed: 50, delay: hasStarted ? 0 : 300 }
+    { speed: 30, delay: hasStarted ? 200 : 500 }
   );
 
   // Handle keyboard navigation
@@ -63,16 +63,16 @@ const LetterModal: React.FC<LetterModalProps> = ({ letter, isOpen, onClose }) =>
     `}>
       <div className={`
         relative w-full max-w-4xl max-h-[90vh] 
-        bg-vintage-paper dark:bg-vintage-dark
-        rounded-3xl shadow-vintage border-2 border-vintage-200/50 dark:border-vintage-700/40
-        overflow-hidden animate-vintage-glow
-        transform transition-all duration-500 ease-out
+        bg-gradient-to-br from-amber-50 to-orange-100 dark:from-amber-900 dark:to-orange-950
+        rounded-3xl shadow-2xl border-2 border-amber-200/50 dark:border-amber-700/40
+        overflow-hidden
+        transform transition-all duration-300 ease-out
         ${isOpen ? 'scale-100 translate-y-0' : 'scale-95 translate-y-4'}
       `}>
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 z-10 w-12 h-12 rounded-full bg-vintage-200/80 hover:bg-vintage-300/90 dark:bg-vintage-800/80 dark:hover:bg-vintage-700/90 flex items-center justify-center text-vintage-800 dark:text-vintage-200 hover:text-vintage-900 dark:hover:text-vintage-100 transition-all duration-300 animate-vintage-pulse"
+          className="absolute top-6 right-6 z-10 w-10 h-10 rounded-full bg-amber-200/80 hover:bg-amber-300/90 dark:bg-amber-800/80 dark:hover:bg-amber-700/90 flex items-center justify-center text-amber-800 dark:text-amber-200 hover:text-amber-900 dark:hover:text-amber-100 transition-all duration-200"
           aria-label="Close modal"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -80,36 +80,36 @@ const LetterModal: React.FC<LetterModalProps> = ({ letter, isOpen, onClose }) =>
           </svg>
         </button>
 
-        {/* Vintage Header */}
-        <div className="relative px-8 py-8 border-b border-vintage-300/40 dark:border-vintage-700/50">
-          <div className="absolute inset-0 bg-gradient-to-r from-vintage-100/40 to-sepia-100/40 dark:from-vintage-800/40 dark:to-sepia-800/40 animate-sepia-breath"></div>
+        {/* Header */}
+        <div className="relative px-8 py-8 border-b border-amber-300/40 dark:border-amber-700/50">
+          <div className="absolute inset-0 bg-gradient-to-r from-amber-100/40 to-orange-100/40 dark:from-amber-800/40 dark:to-orange-800/40"></div>
           <div className="relative">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-vintage-800 dark:text-vintage-100 mb-2 animate-vintage-glow">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-amber-900 dark:text-amber-100 mb-2">
               {letter.title}
             </h2>
             <div className="flex items-center gap-4">
-              <span className="inline-block px-4 py-2 bg-vintage-200/70 dark:bg-vintage-800/70 rounded-full text-sm font-medium text-vintage-800 dark:text-vintage-200 capitalize animate-magical-sparkle">
+              <span className="inline-block px-4 py-2 bg-amber-200/70 dark:bg-amber-800/70 rounded-full text-sm font-medium text-amber-800 dark:text-amber-200 capitalize">
                 {letter.category}
               </span>
-              <span className="text-sepia-600 dark:text-sepia-400 font-heading italic animate-sepia-breath">
+              <span className="text-amber-600 dark:text-amber-400 font-heading italic">
                 {getSectionTitle()}
               </span>
             </div>
           </div>
         </div>
 
-        {/* Magical Content */}
+        {/* Content */}
         <div className="px-8 py-8 overflow-y-auto max-h-[60vh]">
           <div className="prose prose-lg prose-vintage dark:prose-invert max-w-none">
-            <div className="text-vintage-800 dark:text-vintage-200 leading-relaxed font-serif text-lg whitespace-pre-line animate-sepia-breath">
+            <div className="text-amber-900 dark:text-amber-200 leading-relaxed font-serif text-lg whitespace-pre-line">
               {displayText}
-              <span className="inline-block w-0.5 h-6 bg-vintage-600 dark:bg-vintage-400 ml-1 animate-magical-sparkle"></span>
+              <span className="inline-block w-0.5 h-6 bg-amber-600 dark:bg-amber-400 ml-1 animate-pulse"></span>
             </div>
           </div>
         </div>
 
-        {/* Vintage Navigation */}
-        <div className="px-8 py-6 border-t border-vintage-300/40 dark:border-vintage-700/50 bg-gradient-to-r from-vintage-50/60 to-sepia-50/60 dark:from-vintage-950/60 dark:to-sepia-950/60 animate-vintage-pulse">
+        {/* Navigation */}
+        <div className="px-8 py-6 border-t border-amber-300/40 dark:border-amber-700/50 bg-gradient-to-r from-amber-50/60 to-orange-50/60 dark:from-amber-950/60 dark:to-orange-950/60">
           <div className="flex items-center justify-between">
             <div className="flex gap-2">
               {(['message', 'quote', 'reflection'] as const).map((section) => (
@@ -120,10 +120,10 @@ const LetterModal: React.FC<LetterModalProps> = ({ letter, isOpen, onClose }) =>
                     setHasStarted(true);
                   }}
                   className={`
-                    px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 animate-vintage-glow
+                    px-4 py-2 rounded-full text-sm font-medium transition-all duration-200
                     ${currentSection === section
-                      ? 'bg-vintage-600 text-vintage-50 shadow-vintage-glow'
-                      : 'bg-vintage-200/70 hover:bg-vintage-300/80 text-vintage-800 dark:bg-vintage-800/70 dark:hover:bg-vintage-700/80 dark:text-vintage-200'
+                      ? 'bg-amber-600 text-amber-50 shadow-lg'
+                      : 'bg-amber-200/70 hover:bg-amber-300/80 text-amber-800 dark:bg-amber-800/70 dark:hover:bg-amber-700/80 dark:text-amber-200'
                     }
                   `}
                 >
@@ -132,8 +132,8 @@ const LetterModal: React.FC<LetterModalProps> = ({ letter, isOpen, onClose }) =>
               ))}
             </div>
             
-            <div className="text-sm text-sepia-600 dark:text-sepia-400 font-heading animate-sepia-breath">
-              Press <kbd className="px-2 py-1 bg-vintage-200 dark:bg-vintage-800 rounded text-xs">ESC</kbd> to close
+            <div className="text-sm text-amber-600 dark:text-amber-400 font-heading">
+              Press <kbd className="px-2 py-1 bg-amber-200 dark:bg-amber-800 rounded text-xs">ESC</kbd> to close
             </div>
           </div>
         </div>
