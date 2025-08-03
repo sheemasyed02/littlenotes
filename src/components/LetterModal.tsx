@@ -17,8 +17,8 @@ const LetterModal: React.FC<LetterModalProps> = ({ letter, isOpen, onClose }) =>
   }, [isOpen, letter]);
 
   const { displayText } = useTypewriter(
-    letter ? letter.content[currentSection] : '',
-    { speed: 50, delay: hasStarted ? 100 : 300 }
+    letter && hasStarted ? letter.content[currentSection] : '',
+    { speed: 40, delay: 100 }
   );
 
   // Handle keyboard navigation
@@ -105,7 +105,10 @@ const LetterModal: React.FC<LetterModalProps> = ({ letter, isOpen, onClose }) =>
         {/* Content with vintage styling and proper scrolling */}
         <div className="flex-1 px-8 py-6 overflow-y-scroll scrollbar-thin relative">
           <div className="prose prose-lg max-w-none">
-            <div className="text-vintage-ink dark:text-vintage-dark-text leading-relaxed font-primary text-lg whitespace-pre-line">
+            <div 
+              key={`${currentSection}-${letter?.id}`}
+              className="text-vintage-ink dark:text-vintage-dark-text leading-relaxed font-primary text-lg whitespace-pre-line"
+            >
               {displayText}
               <span className="inline-block w-0.5 h-6 bg-vintage-brown dark:bg-vintage-dark-gold ml-1 animate-pulse"></span>
             </div>
@@ -121,10 +124,10 @@ const LetterModal: React.FC<LetterModalProps> = ({ letter, isOpen, onClose }) =>
                   key={section}
                   onClick={() => {
                     if (currentSection !== section) {
-                      setCurrentSection(section);
                       setHasStarted(false);
+                      setCurrentSection(section);
                       // Small delay to reset typewriter before starting
-                      setTimeout(() => setHasStarted(true), 100);
+                      setTimeout(() => setHasStarted(true), 50);
                     }
                   }}
                   className={`
