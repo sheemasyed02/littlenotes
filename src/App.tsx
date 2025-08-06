@@ -5,7 +5,7 @@ import LetterCard from './components/LetterCard';
 import LetterModal from './components/LetterModal';
 import ThemeToggle from './components/ThemeToggle';
 import { Letter } from './types';
-
+ 
 function App() {
   const [selectedLetter, setSelectedLetter] = useState<Letter | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -82,3 +82,4 @@ function App() {
 }
 
 export default App;
+
