@@ -7,124 +7,136 @@ export const letters: Letter[] = [
     category: 'comfort',
     gradient: 'from-parchment-200 via-parchment-300 to-parchment-400',
     content: {
-      message: `Dear gentle soul,
+      message: `Hey you,
 
-In this moment when the weight of emotions feels overwhelming, please know that what you're feeling is valid and temporary. Like clouds that gather and eventually pass, these heavy feelings will shift and change.
+I know your heart feels really heavy right now. And I just want to say—it’s okay. You don’t have to hide it or be strong all the time. Whatever you’re feeling, it matters. It’s real.
 
-You are not alone in this experience. Countless hearts have felt this depth, and countless hearts have found their way through. Your emotions, however intense, are not your enemy—they are messengers, telling you that you care deeply about something meaningful.
+Some days just feel heavier than others, and it’s hard to explain why. But please remember, even in this moment, you’re doing your best—and that’s enough.
 
-Take this moment to breathe. Feel your feet on the ground. Notice that even in this heaviness, you continue to exist, to breathe, to be. This is your strength showing itself in the quietest way.
+You don’t have to fix everything today. Just take a deep breath. Maybe get some rest. Drink some water. Let the quiet be gentle on you.
 
-Tomorrow will feel different. Not necessarily easier, but different. And that difference is where hope lives.`,
-      quote: "The wound is the place where the Light enters you. — Rumi",
-      reflection: "Sometimes the most profound growth happens in our darkest moments. This heaviness you feel is not a burden—it's depth. It's your heart expanding to hold more compassion, more wisdom, more love."
+You are loved. More than you know. This hard moment will pass, just like all the others you’ve survived before.
+
+And when it does, I’ll still be here. Rooting for you. Always.`,
+    
+    quote: "One day at a time, one breath at a time. You’ve got this.",
+    
+    reflection: "It’s okay to feel low sometimes. It doesn’t mean you’re weak—it means you’re human. And you’re allowed to take your time to feel better."
     }
   },
   {
     id: 'distance-difficulty',
-    title: 'When distance feels difficult',
-    category: 'connection',
-    gradient: 'from-parchment-300 via-vintage-sepia to-parchment-500',
-    content: {
-      message: `Beloved friend,
+  title: 'Open when distance feels hard',
+  category: 'connection',
+  gradient: 'from-parchment-300 via-vintage-sepia to-parchment-500',
+  content: {
+    message: `Hey there,
 
-Distance in miles cannot measure the closeness of hearts. While your loved ones may be far from your physical presence, they exist in the sacred space of your thoughts, your memories, and your love.
+I know being away from the people you care about can feel really tough. Sometimes the distance makes everything feel a bit heavier. And it’s okay to miss them deeply.
 
-Every sunset you see is a sunset they see too, just at a different time. Every star in your sky shines over them as well. The same moon that watches over you keeps vigil over them. In this way, you are never truly apart.
+But just because someone isn't right beside you doesn’t mean they’ve left your life. They’re still with you—in your memories, in your thoughts, in the little things that remind you of them. They’re just a call, a message, or even a memory away.
 
-Love doesn't diminish with distance—it transforms. It becomes letters written in the heart, conversations held in silence, and prayers whispered into the wind. It becomes the strength to keep going, knowing that somewhere, someone believes in you completely.
+You’re still connected. The love, the bond, the moments you’ve shared—none of that fades just because of space or time.
 
-Until you meet again, carry them with you in the most permanent way possible: in your heart, where distance has no meaning.`,
-      quote: "Absence makes the heart grow fonder, but presence makes the heart grow stronger. Both are gifts in their own time.",
-      reflection: "The ache of missing someone is proof of love's existence. Let this feeling remind you of how lucky you are to have someone worth missing, and how lucky they are to be loved by you."
+Hold on to the good times, and remind yourself that this is temporary. You’ll be with them again, and it’ll be worth the wait.
+
+Until then, take care of yourself. They would want that too.`,
+    
+    quote: "Miles apart, but never truly away from each other’s hearts.",
+    
+    reflection: "Missing someone is hard, but it’s also a reminder of how much they matter. That kind of love doesn't fade with distance—it grows."
     }
   },
   {
     id: 'questioning-strength',
-    title: 'When you\'re questioning your strength',
-    category: 'empowerment',
-    gradient: 'from-parchment-400 via-vintage-brown to-parchment-600',
-    content: {
-      message: `Warrior of quiet battles,
+  title: "Open when you're questioning your strength",
+  category: 'empowerment',
+  gradient: 'from-parchment-400 via-vintage-brown to-parchment-600',
+  content: {
+    message: `Hey,
 
-Your strength isn't always loud. It doesn't always announce itself with fanfare or recognition. More often, it whispers through ordinary moments: the decision to get up when staying down feels easier, the choice to try again after disappointment, the courage to remain kind when the world feels harsh.
+I know you might be feeling unsure of yourself right now. Maybe everything feels like too much, and you're starting to wonder if you can really handle it all.
 
-You have survived every difficult day that has come before this one. That is not coincidence—that is strength. You have faced uncertainty and kept moving forward. You have experienced loss and still chosen to love. You have felt fear and still found ways to be brave.
+But let me remind you—look at how far you've already come. You’ve been through hard days before, and you made it through them. That’s not luck. That’s strength.
 
-Your strength isn't measured by how much you can carry without breaking, but by how beautifully you put yourself back together when you do break. And you have done this, again and again, with a grace you don't even recognize.
+Strength doesn’t always look loud or powerful. Sometimes, it looks like just getting out of bed when you don’t feel like it. Or being kind to others even when you’re hurting inside. Or simply taking one small step forward when you’re full of doubt.
 
-You are stronger than you know, braver than you believe, and more resilient than you can imagine. This moment of doubt is not evidence of weakness—it's evidence of honesty, of self-reflection, of the humility that makes true strength possible.`,
-      quote: "She believed she could, so she did. But first, she doubted, she struggled, and she grew.",
-      reflection: "Questioning your strength is often the first step to discovering how much you actually have. This doubt you feel? It's not weakness—it's wisdom asking you to recognize your own power."
+It’s okay to feel tired. It’s okay to feel unsure. That doesn’t make you weak—it makes you human. But don’t forget: you’ve picked yourself up so many times before. You’re doing better than you think.
+
+You're stronger than these thoughts. And I believe in you—even when you’re struggling to believe in yourself.`,
+    
+    quote: "Strength is not about never falling—it's about rising every time you do.",
+    
+    reflection: "Feeling unsure of yourself is part of growing. Don’t let this moment make you forget all the strong ones that came before it."
     }
   },
   {
     id: 'self-doubt',
-    title: 'When self-doubt creeps in',
-    category: 'confidence',
-    gradient: 'from-vintage-sepia via-parchment-300 to-vintage-brown',
-    content: {
-      message: `Dear doubting mind,
+  title: 'Open when self-doubt creeps in',
+  category: 'confidence',
+  gradient: 'from-vintage-sepia via-parchment-300 to-vintage-brown',
+  content: {
+    message: `Hey,
 
-Self-doubt is not your enemy—it's often disguised wisdom, asking you to pause and reflect. But sometimes it overstays its welcome, whispering lies about your worth and capabilities.
+I know you’re doubting yourself right now. Maybe your mind is telling you that you’re not good enough or that you can’t do it. But let me tell you something—just because your mind says it, doesn’t mean it’s true.
 
-You are not your doubts. You are not your fears. You are not the critical voice that questions your every move. You are the consciousness that observes these thoughts, the awareness that can choose which voice to listen to.
+Self-doubt shows up for all of us. It’s that little voice that questions everything. But look back for a second. How many times has that voice been wrong? So many times, right?
 
-Think of all the times doubt told you that you couldn't do something, and yet here you are, having done countless things doubt said were impossible. Remember the goals you achieved despite uncertainty, the relationships you built despite insecurity, the challenges you overcame despite fear.
+You’ve made it through challenges you thought you couldn’t. You’ve learned things you thought were too hard. You’ve shown up, even on the days when it felt impossible. That’s strength. That’s proof.
 
-Your track record of success is longer than your list of failures. Your moments of courage outnumber your moments of fear. Your acts of love outweigh your moments of doubt.
+You don’t need to have it all figured out right now. You don’t have to be perfect. You just need to keep trying, keep showing up, and keep being kind to yourself.
 
-Trust in your ability to figure things out as you go. Trust in your resilience to handle whatever comes. Trust in your worthiness to take up space, to have opinions, to make mistakes, and to try again.
-
-You belong here. You are enough. You always have been.`,
-      quote: "You have been assigned this mountain to show others it can be moved. — Mel Robbins",
-      reflection: "Doubt is often perfectionism in disguise, asking you to be certain before you act. But growth happens in uncertainty. Trust yourself to learn as you go."
+You are doing better than you think. You are more capable than you feel. And no matter what your doubts say—you belong here, and you are enough. Always.`,
+    
+    quote: "You've made it through 100% of your worst days. Don't let one thought undo all your strength.",
+    
+    reflection: "Self-doubt is normal, but it doesn't define you. You've already proved it wrong more times than you realize."
     }
   },
   {
     id: 'personal-pride',
-    title: 'In a moment of personal pride',
-    category: 'celebration',
-    gradient: 'from-parchment-500 via-vintage-gold to-vintage-brown',
-    content: {
-      message: `Magnificent human,
+  title: 'Open when you feel proud of yourself',
+  category: 'celebration',
+  gradient: 'from-parchment-500 via-vintage-gold to-vintage-brown',
+  content: {
+    message: `Hey you,
 
-Take a moment to truly feel this. Not just the accomplishment, but the journey that led here. Not just the result, but the courage it took to begin. Not just the success, but the resilience you showed through every setback.
+Look at you. You did it.
 
-You did this. Through doubt, through obstacles, through moments when you wanted to give up—you chose to continue. You chose to believe in yourself when it would have been easier to surrender. You chose growth over comfort, progress over perfection.
+I hope you're taking a moment right now—not just to smile at what you've achieved, but to feel proud of everything it took to get here. The effort, the time, the patience, the setbacks—you kept going, even when things got hard. That’s something to be really proud of.
 
-This moment of pride isn't just about what you achieved—it's about who you became in the process. You are stronger, wiser, and more capable than when you started. You have proven to yourself that you can do hard things, that you can grow beyond your current limitations.
+This isn’t just about reaching a goal. It’s about believing in yourself when it was tough. It’s about showing up, again and again, when no one was watching. You’ve grown so much—and not just in what you’ve done, but in who you are.
 
-Celebrate not just the destination, but the traveler you've become. Honor not just the achievement, but the character you've built. Be proud not just of what you've done, but of who you are.
+Let yourself feel proud. You’ve earned this. You didn’t give up, and that matters more than you know.
 
-You earned this moment. You deserve this feeling. You are worthy of your own admiration.
-
-Let this pride fuel your next adventure, remind you of your capabilities, and serve as evidence that you can accomplish whatever you set your heart to.`,
-      quote: "Pride is not the opposite of shame, but its antidote. — Uncle Iroh",
-      reflection: "Taking pride in your accomplishments isn't arrogance—it's recognition of your own growth and effort. This moment is proof of your potential and a preview of what's possible."
+You’re capable of so much, and this moment is just a reminder of what you can do. Keep this feeling close. Let it remind you of your strength the next time things get tough.`,
+    
+    quote: "You did it. And I hope you never forget how far you've come.",
+    
+    reflection: "Feeling proud of yourself isn’t selfish—it’s self-love. It’s proof that you’ve worked hard and grown into someone even stronger."
     }
   },
   {
     id: 'new-beginnings',
-    title: 'When starting something new',
-    category: 'growth',
-    gradient: 'from-parchment-400 via-vintage-sepia to-parchment-700',
-    content: {
-      message: `Brave adventurer,
+  title: "Open when you're starting something new",
+  category: 'growth',
+  gradient: 'from-parchment-400 via-vintage-sepia to-parchment-700',
+  content: {
+    message: `Hey you,
 
-Every expert was once a beginner. Every master was once a disaster. Every accomplished person started exactly where you are now—at the beginning, with more questions than answers, more uncertainty than confidence.
+Starting something new can feel scary—and that’s completely normal. It's okay if you're nervous, unsure, or even doubting yourself a little. It just means you care.
 
-New beginnings are sacred spaces where potential lives. They are invitations to become someone you've never been before, to discover capabilities you didn't know you had, to write a story you've never told.
+But remember this: no one starts out knowing everything. Every person you look up to once stood where you are—at the beginning, with shaky hands and a hopeful heart.
 
-It's okay to feel nervous. It's okay to feel unprepared. It's okay to feel like you don't belong yet. These feelings aren't signs that you shouldn't be here—they're signs that you're pushing your boundaries, that you're growing.
+You're not supposed to have it all figured out right away. You’re just supposed to start. Learn as you go. Make mistakes. Grow from them. Keep showing up.
 
-Trust in your ability to learn, to adapt, to figure things out as you go. Trust that you were given this opportunity because someone believes in your potential. Trust that your beginner's mind is actually an advantage—it sees possibilities that expertise might miss.
+What matters most is your willingness to try. And the fact that you’re doing that? That already makes you brave.
 
-You don't have to be perfect on day one. You don't have to have all the answers immediately. You just have to be willing to show up, to try, to learn from mistakes, and to keep going.
-
-Your future self is cheering you on from everything you're about to become.`,
-      quote: "A year from now, you'll wish you had started today. — Karen Lamb",
-      reflection: "New beginnings require courage not because they're dangerous, but because they're full of possibility. And possibility, beautiful soul, is where magic lives."
+Take things one step at a time. Be kind to yourself. You've got more strength in you than you realize—and you're going to surprise yourself in the best way.`,
+    
+    quote: "You don’t have to be great to start, but you have to start to be great.",
+    
+    reflection: "New beginnings don’t need perfection. They just need courage, and you’ve already shown that by taking the first step."
     }
   }
 ];
