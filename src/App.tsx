@@ -65,7 +65,7 @@ function App() {
           {/* Footer */}
           <footer className="text-center py-12 px-4 border-t border-vintage-brown/30 dark:border-vintage-dark-gold/50 bg-parchment-100/60 dark:bg-vintage-dark-surface/40">
             <p className="text-vintage-brown dark:text-vintage-dark-muted font-heading italic tracking-wider">
-              Made with care for moments when words matter most
+              Made with care for moments when words matter most :)
             </p>
           </footer>
         </div>
