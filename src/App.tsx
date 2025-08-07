@@ -42,7 +42,7 @@ function App() {
           {/* Vintage handwritten style header */}
           <header className="text-center py-20 px-4">
             <h1 className="text-6xl md:text-7xl font-heading font-bold text-vintage-ink dark:text-vintage-dark-text mb-6 tracking-wider italic vintage-text-shadow">
-              Open When Letters
+              If You Ever Feel...
             </h1>
             <p className="text-xl md:text-2xl text-vintage-brown dark:text-vintage-dark-muted max-w-2xl mx-auto leading-relaxed font-heading italic tracking-wide opacity-90">
               Open a letter when you need it most.
