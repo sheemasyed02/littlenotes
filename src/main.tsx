@@ -3,7 +3,6 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App'
 
-// Debug: Add console log to check if main.tsx is executing
 console.log('main.tsx is executing...');
 
 const rootElement = document.getElementById('root');

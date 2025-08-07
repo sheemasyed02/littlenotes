@@ -6,12 +6,10 @@ const LetterModal: React.FC<LetterModalProps> = ({ letter, isOpen, onClose }) =>
   const [currentSection, setCurrentSection] = useState<'message' | 'quote' | 'reflection'>('message');
   const [hasStarted, setHasStarted] = useState(false);
 
-  // Reset when modal opens
   useEffect(() => {
     if (isOpen && letter) {
       setCurrentSection('message');
       setHasStarted(false);
-      // Small delay to allow modal to appear before starting typewriter
       setTimeout(() => setHasStarted(true), 300);
     }
   }, [isOpen, letter]);
@@ -21,7 +19,6 @@ const LetterModal: React.FC<LetterModalProps> = ({ letter, isOpen, onClose }) =>
     { speed: 40, delay: 100 }
   );
 
-  // Handle keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!isOpen) return;
@@ -70,10 +67,8 @@ const LetterModal: React.FC<LetterModalProps> = ({ letter, isOpen, onClose }) =>
         ${isOpen ? 'scale-100 translate-y-0' : 'scale-95 translate-y-4'}
       `}>
         
-        {/* Vintage paper texture */}
         <div className="absolute inset-0 bg-vintage-paper opacity-10 dark:opacity-15 rounded-lg"></div>
         
-        {/* Close button with vintage styling */}
         <button
           onClick={onClose}
           className="absolute top-6 right-6 z-10 w-10 h-10 rounded-full bg-vintage-brown/20 dark:bg-vintage-dark-gold/40 hover:bg-vintage-rust/30 dark:hover:bg-vintage-dark-gold/60 flex items-center justify-center text-vintage-ink dark:text-vintage-dark-text transition-all duration-200"
@@ -84,7 +79,6 @@ const LetterModal: React.FC<LetterModalProps> = ({ letter, isOpen, onClose }) =>
           </svg>
         </button>
 
-        {/* Header with vintage styling */}
         <div className="relative px-8 py-8 border-b border-vintage-brown/20 dark:border-vintage-dark-gold/40 flex-shrink-0">
           <div className="absolute inset-0 bg-gradient-to-r from-parchment-100/40 to-parchment-200/40 dark:from-vintage-dark-surface/50 dark:to-vintage-dark-accent/50"></div>
           <div className="relative">
@@ -102,7 +96,6 @@ const LetterModal: React.FC<LetterModalProps> = ({ letter, isOpen, onClose }) =>
           </div>
         </div>
 
-        {/* Content with vintage styling and proper scrolling */}
         <div className="flex-1 px-8 py-6 overflow-y-scroll scrollbar-thin relative">
           <div className="prose prose-lg max-w-none">
             <div 
@@ -115,7 +108,6 @@ const LetterModal: React.FC<LetterModalProps> = ({ letter, isOpen, onClose }) =>
           </div>
         </div>
 
-        {/* Navigation with vintage styling */}
         <div className="px-8 py-6 border-t border-vintage-brown/20 dark:border-vintage-dark-gold/40 bg-gradient-to-r from-parchment-100/60 to-parchment-200/60 dark:from-vintage-dark-surface/60 dark:to-vintage-dark-accent/60 flex-shrink-0">
           <div className="flex items-center justify-between">
             <div className="flex gap-3">
@@ -126,7 +118,6 @@ const LetterModal: React.FC<LetterModalProps> = ({ letter, isOpen, onClose }) =>
                     if (currentSection !== section) {
                       setHasStarted(false);
                       setCurrentSection(section);
-                      // Small delay to reset typewriter before starting
                       setTimeout(() => setHasStarted(true), 50);
                     }
                   }}

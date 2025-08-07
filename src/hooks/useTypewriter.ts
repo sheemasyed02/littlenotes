@@ -9,7 +9,6 @@ export const useTypewriter = (text: string, options: UseTypewriterOptions = {}) 
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    // Clear any existing timers
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     if (intervalRef.current) clearInterval(intervalRef.current);
 
